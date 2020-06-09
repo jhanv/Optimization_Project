@@ -1,0 +1,93 @@
+!multinode constrained solution using TSP
+
+
+min 11x1_3 + 16x1_8 + 6x1_9 + 10x3_9 + 5x3_8 + 17x3_15 + 5x8_3 + 22x8_15 + 15x8_9 + 15x9_8 + 10x9_3 + 12x9_15
+
+
+
+st
+
+x1_3 + x1_8 + x1_9 = 1 !start at node
+1
+x8_3 - x3_8 + x8_9 - x9_8 + x8_15 - x1_8 = 0 !pass through node
+8
+x3_8 - x8_3 + x3_15 - x1_3 + x3_9 - x9_3 = 0 !passing through node
+3
+x9_8 - x8_9 + x9_15 - x1_9 + x9_3 - x3_9 = 0 !node 9
+
+1x9_15 +x8_15 + x3_15 = 1 !end at node 15
+
+1x8_3 + x8_9 + x8_15 = 1 !forcing node 8 leaving
+
+1x1_8 + x3_8 + x9_8 = 1 !forcing node 8 entering
+1
+x3_8 + x3_15 + x3_9 = 1 !forcing node 3 leaving
+1
+x1_3 + x8_3 + x9_3 = 1 !forcing node 3 entering
+1
+x9_8 + x9_15 + x9_3 = 1 !forcing node 9 leaving
+1
+x1_9 + x8_9 + x3_9 = 1 !forcing node 9 entering
+
+x3_8 + x3_9 + x8_9 = 2
+
+x9_8 + x8_3 + x9_3 = 2
+ !forcing 
+
+x1_3 + x1_9 + x1_8 + x3_8 + x3_9 + x3_15 + x8_3 + x8_9 + x8_15 + x9_3 + x9_8 + x9_15 = 4
+
+
+
+
+1x1_3 >= 0
+
+1x1_8 >= 0
+
+1x1_9 >= 0
+
+1x3_9 >= 0 
+
+1x3_15 >= 0
+
+1x3_8 >= 0
+
+1x8_3 >= 0
+
+1x8_15 >= 0
+
+1x8_9 >= 0
+
+1x9_8 >= 0
+
+1x9_3 >= 0
+
+1x9_15 >= 0
+
+
+1x1_3 <= 1
+
+1x1_8 <=1
+
+1x1_9 <=1
+
+1x3_9 <=1
+
+1x3_15 <=1
+
+1x3_8 <=1
+
+1x8_3 <=1
+
+1x8_15 <=1
+
+1x8_9 <=1
+
+1x9_8 <=1
+
+1x9_3 <=1
+
+1x9_15 <=1
+
+
+
+end
